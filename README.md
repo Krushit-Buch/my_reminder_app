@@ -32,12 +32,11 @@ lib/
 
 ### 1. **State Management: Provider**
 **Why Provider?**
-- Simple and intuitive for developers with 2.5+ years experience
+- Simple and intuitive for developers
 - Perfect for medium-complexity apps like reminder manager
-- Built on Flutter's InheritedWidget (proven & stable)
+- Built on Flutter's InheritedWidget
 - Excellent widget tree integration for the MasterHomePage pattern
 - Low boilerplate compared to alternatives
-- Great documentation and community support
 - No external dependencies complexity
 
 **Implementation:**
