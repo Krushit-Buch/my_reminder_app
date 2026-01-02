@@ -54,7 +54,6 @@ MultiProvider(
 - Actively maintained (v15+, latest updates in 2024)
 - Cross-platform support (Android, iOS, macOS, Windows, Linux)
 - Precise scheduling with timezone support
-- 1M+ downloads - largest community
 - Lightweight library
 - Full control over notification behavior
 - No additional fees (unlike awesome_notifications_fcm)
@@ -81,28 +80,24 @@ MultiProvider(
 ### ReminderProvider Architecture
 
 ```
-┌─────────────────────────────────────────────────────┐
-│             ReminderProvider (ChangeNotifier)        │
-├─────────────────────────────────────────────────────┤
-│                                                      │
-│  State:                                              │
-│  • _reminders: List<Reminder>                        │
-│  • _isLoading: bool                                  │
-│  • _errorMessage: String?                            │
-│                                                      │
-│  Methods:                                            │
-│  • loadReminders()      → Fetch from DB              │
-│  • addReminder()        → Create + Schedule          │
-│  • updateReminder()     → Modify + Reschedule       │
-│  • completeReminder()   → Mark done + Cancel notif   │
-│  • deleteReminder()     → Remove + Cancel notif      │
-│  • getPendingReminders() → Filter active             │
-│  • getCompletedReminders() → Filter done             │
-│  • getRemindersByCategory() → Filter by category     │
-│                                                      │
-└─────────────────────────────────────────────────────┘
-                          ↓
-        Updates listeners via notifyListeners()
+ReminderProvider (ChangeNotifier)        
+
+State:                                              
+• _reminders: List<Reminder>                        
+• _isLoading: bool                                  
+• _errorMessage: String?                            
+Methods:                                            
+• loadReminders()      → Fetch from DB              
+• addReminder()        → Create + Schedule          
+• updateReminder()     → Modify + Reschedule       
+• completeReminder()   → Mark done + Cancel notif   
+• deleteReminder()     → Remove + Cancel notif      
+• getPendingReminders() → Filter active             
+• getCompletedReminders() → Filter done             
+• getRemindersByCategory() → Filter by category     
+
+↓
+Updates listeners via notifyListeners()
 ```
 
 **Data Flow:**
@@ -447,11 +442,6 @@ List<Reminder> work = provider.getRemindersByCategory('Work');
 - Deep nesting
 - God objects
 - Silent failures
-
----
-
-## License
-MIT License - Feel free to use in commercial projects
 
 ---
 
